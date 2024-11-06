@@ -1,7 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const countries: any = {
+interface Country {
+  capital: string;
+  population: string;
+  flag: string;
+}
+
+type Countries = {
+  [key: string]: Country; // This allows for dynamic keys (country slugs)
+};
+
+const countries: Countries = {
   pakistan: {
     capital: "Islamabad",
     population: "251,269,164 million",
